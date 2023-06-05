@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link type="image/x-icon" href="/img/fav.png" rel="shortcut icon" />
+    <link type="Image/x-icon" href="/img/fav.png" rel="icon" />
+    <script defer src="scripts/app.js"></script>
+    <script defer src="scripts/localSave.js"></script>
+    <script defer src="scripts/modalWindow.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b02f7b92-72a7-4a23-b4ed-fefcb9f012b6&lang=ru_RU"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="main_container">
+      <div class="nav">
+        <div class="wrap-text">
+          <div class="nav-text">
+            <img class="imgg" src="img/logo.png" alt="" />
+            <p class="text">Weather<span class="app">A</span>pp</p>
+          </div>
+          <div class="search-container">
+            <div class="wrap">
+              <input
+                class="text-field"
+                type="text"
+                placeholder="Search here.."
+              />
+              <button class="butt"></button>
+            </div>
+          </div>
+          <img class="bars" src="img/bars-solid.svg" alt="menu" />
+        </div>
+      </div>
+      <div class="main">
+        <div class="weather-container">
+          <div class="left">
+            <img class="left-i" src="img/weather-Clear.png" alt="weather" />
+            <p class="left-t">°C</p>
+            <div class="lefttt">
+              <img src="img/placeholder.png" alt="geo" />
+              <p class="left-l">Your Locate</p>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right-time">
+              <p class="time">00:00</p>
+            </div>
+            <div class="right-descr">
+              <p class="description">Clouds, Monday</p>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-other">
+        <div class="left-other">
+          <div class="indicators-other">
+            <div class="indicators-one">
+              <div class="indicators-wrap">
+                <img
+                  class="indicators-img"
+                  src="img/icon-humidity.png"
+                  alt="indicators"
+                />
+                <div class="text-wrap">
+                  <p>Влажность</p>
+                  <p class="indicators-humidity ind">30%</p>
+                </div>
+              </div>
+
+              <div class="indicators-wrap">
+                <img
+                  class="indicators-img"
+                  src="img/icon-index.png"
+                  alt="indicators"
+                />
+                <div class="text-wrap">
+                  <p>УФ-Индекс</p>
+                  <p class="indicators-index ind">30%</p>
+                </div>
+              </div>
+            </div>
+            <div class="indicators-line"></div>
+            <div class="indicators-two">
+              <div class="indicators-wrap">
+                <img
+                  class="indicators-img"
+                  src="img/icon-sunset.png"
+                  alt="indicators"
+                />
+                <div class="text-wrap">
+                  <p>Закат</p>
+                  <p class="indicators-sunset ind">30%</p>
+                </div>
+              </div>
+
+              <div class="indicators-wrap">
+                <img
+                  class="indicators-img"
+                  src="img/icon-sunrise.png"
+                  alt="indicators"
+                />
+                <div class="text-wrap">
+                  <p>Восход</p>
+                  <p class="indicators-sunrise ind">30%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rainfall-other">
+            <div class="last-wrap">
+              <img src="img/icon-wind.png" alt="indicators" />
+              <div class="l-w">
+                <p class="winddop">Скорость ветра</p>
+                <p class="wind-speed">0.0 км/ч</p>
+              </div>
+            </div>
+            <div class="last-wrap">
+              <img class="press" src="img/icon-pressure.png" alt="indicators" />
+              <div class="l-w">
+                <p>Давление</p>
+                <p class="pressure">0.0 hPA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-other">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- модальное окно -->
+    <div class="modal">
+      <div class="modal_main">
+        <h2 class="modal_title">Список последних городов:</h2>
+        <div class="modal_container">
+          <p class="modal_text">Пусто..</p>
+        </div>
+
+        <button class="modal_close">&#10006;</button>
+      </div>
+    </div>
+  </body>
+</html>
